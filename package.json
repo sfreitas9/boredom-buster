@@ -1,0 +1,54 @@
+{
+  "name": "boredom-buster",
+  "version": "1.0.0",
+  "description": "app to alleviate boredom by providing variety of ideas of what to do",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "proxy": "http://localhost:3000",
+  "scripts": {
+    "build": "npm run less && webpack",
+    "less": "lessc src/css/style.less dist/css/style.css",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfreitas9/boredom-buster.git"
+  },
+  "keywords": [
+    "boredom",
+    "activity",
+    "activities",
+    "fun",
+    "music",
+    "ideas"
+  ],
+  "author": "Sherry Freitas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfreitas9/boredom-buster/issues"
+  },
+  "homepage": "https://github.com/sfreitas9/boredom-buster#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-reveal": "^1.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "dotenv": "^8.0.0",
+    "less": "^3.9.0",
+    "webpack": "^3.6.0",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1"
+  }
+}

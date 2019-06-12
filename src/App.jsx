@@ -1,56 +1,53 @@
 import React, { Component } from 'react';
+import RandomIdea from './RandomIdea';
+import Jeopardy from './Jeopardy';
+import News from './News';
+import Music from './HotMusic';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
   }
 
   render () {
     return (
       <div className='container'>
         <h1>Boredom Buster</h1>
+        <h3 className='mb-5'>No need to be bored, pick a box and get an idea of how to get rid of your boredom.  Have fun!</h3>
+        <hr />
         <div className='row'>
           <div className='col-md-6'>
-            <div className='panel'>
+            <div className='panel panel-success'>
               <div className='panel-heading'>
-                Random Ideas to bust your boredom
+                <h3>Discover a random activity</h3>
               </div>
               <RandomIdea />
             </div>
           </div>
           <div className='col-md-6'>
-            <div className='panel'>
+            <div className='panel panel-primary'>
               <div className='panel-heading'>
-                Discover "hot" music
+                <h3>Practice for Jeopardy</h3>
               </div>
-              <div className='panel-body'>
-                {/*use https://openwhyd.org/hot/electro */}
-              </div>  
+              <Jeopardy />
             </div>
           </div>
         </div>
         <div className='row'>
           <div className='col-md-6'>
-            <div className='panel'>
+            <div className='panel panel-info'>
               <div className='panel-heading'>
-                Practice for Jeopardy
+                <h3>Catch up on the news</h3>
               </div>
-              <div className='panel-body'>
-                {/*use http://jservice.io/api/random*/}
-                </div>  
+              <News />
             </div>
           </div>
           <div className='col-md-6'>
-            <div className='panel'>
+            <div className='panel panel-warning'>
               <div className='panel-heading'>
-                TBD
+                <h3>Find music to enjoy</h3>
               </div>
-              <div className='panel-body'>
-                {/*do something requiring an api */}
-              </div>  
+              <Music />
             </div>
           </div>
         </div>
