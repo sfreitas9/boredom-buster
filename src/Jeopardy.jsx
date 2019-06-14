@@ -23,15 +23,11 @@ class Jeopardy extends Component {
   }
 
   getQuestion() {
-    // fetch('//jservice.io/api/random')
-    //   .then(results => {
-    //     return results.json();
     axios.get('/api/jeopardy').then(results => {
         if (results.status === 200) {
           return results;
         }
     }).then(newQuestion => {
-        debugger;
         newQuestion = newQuestion.data[0];
         this.setState({
           haveQuestion: true,
