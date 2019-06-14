@@ -23,7 +23,7 @@ class Jeopardy extends Component {
   }
 
   getQuestion() {
-    fetch('http://jservice.io/api/random')
+    fetch('//jservice.io/api/random')
       .then(results => {
         return results.json();
       }).then(newQuestion => {

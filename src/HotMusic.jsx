@@ -36,7 +36,6 @@ class HotMusic extends Component {
   render() {
     const tracks = this.state.newMusic.map(track => {
       let trackInfo = track.name;
-      debugger;
       if (track.eId) {
         let link = '';
         switch (track.eId.substring(1,3)) {
