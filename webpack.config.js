@@ -1,8 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const result = require('dotenv').config().parsed;
+//const result = require('dotenv').config().parsed;
+const result = require('dotenv').config({ silent: process.env.NODE_ENV === 'production' }).parsed;
   
-// reduce it to a nice object, the same as before
+// reduce it to a nice object
 const envKeys = Object.keys(result).reduce((prev, next) => {
   prev[`process.env.${next}`] = JSON.stringify(result[next]);
   return prev;
