@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const result = require('dotenv').config()
+require('dotenv').config();
 
 const app = express();
 
@@ -19,6 +19,7 @@ app.use(express.static('public'));
 
 app.get('/api/news',(req,res) => {
   /* NOTE:  News API can only be used 10 times in 24 hours */
+  console.log("key", process.env.REACT_APP_API_KEY);
   axios
     .get('https://api.currentsapi.services/v1/latest-news', {
       headers: {'Authorization': process.env.REACT_APP_API_KEY}
