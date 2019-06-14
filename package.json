@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npm run less && webpack",
     "less": "lessc src/css/style.less dist/css/style.css",
-    "start": "node server/index.js"
+    "start": "npm run build && node server/index.js"
   },
   "repository": {
     "type": "git",
