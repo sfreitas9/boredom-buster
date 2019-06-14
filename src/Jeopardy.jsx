@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Slide from 'react-reveal/Slide'; 
 import Bounce from 'react-reveal/Bounce'; 
+import axios from 'axios';
 
 class Jeopardy extends Component {
   constructor(props) {
@@ -23,11 +23,16 @@ class Jeopardy extends Component {
   }
 
   getQuestion() {
-    fetch('//jservice.io/api/random')
-      .then(results => {
-        return results.json();
-      }).then(newQuestion => {
-        newQuestion = newQuestion[0];
+    // fetch('//jservice.io/api/random')
+    //   .then(results => {
+    //     return results.json();
+    axios.get('/api/jeopardy').then(results => {
+        if (results.status === 200) {
+          return results;
+        }
+    }).then(newQuestion => {
+        debugger;
+        newQuestion = newQuestion.data[0];
         this.setState({
           haveQuestion: true,
           showAnswer: false,

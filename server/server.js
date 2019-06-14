@@ -42,6 +42,19 @@ app.get('/api/music*',(req, res) => {
     });
 });
 
+app.get('/api/jeopardy',(req, res) => {
+  let url = `http://jservice.io/api/random`;
+  axios
+    .get(url)
+    .then(response => {   
+      res.status(200).json(response.data);
+    })
+    .catch(error => {
+      res.status(404).send('Jeopardy information not found: ' + error);
+    });
+});
+
+
 app.get('*',(req, res) => {
   res.status(404).send('Not found');
 });
