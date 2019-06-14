@@ -1,19 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-//const result = require('dotenv').config().parsed;
 const result = require('dotenv').config().parsed;
-console.log('result=', result);
-// reduce it to a nice object
-// const envKeys = Object.keys(result).reduce((prev, next) => {
-//   prev[`process.env.${next}`] = JSON.stringify(result[next]);
-//   return prev;
-// }, {});
 
 module.exports = {
-  // plugins: [
-  //   new webpack.DefinePlugin(envKeys)
-  // ],
-
   context: path.join(__dirname, '/src'),
 
   entry: {

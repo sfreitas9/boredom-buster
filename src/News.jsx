@@ -23,7 +23,7 @@ class News extends Component {
   getNews() {
     axios.get('/api/news').then(results => {
         if (results.status === 200) {
-          return results.data;
+          return results.data.news;
         }
       }).then(newNews => {
       // Test data
@@ -72,7 +72,8 @@ class News extends Component {
           haveNews: false,
           latestNews: [],
           error: 'Sorry cannot get news today'
-        })
+        });
+        console.log(`error is ${error}`);
       });
   }
 
